@@ -1,18 +1,27 @@
 <template>
-  <div class="container"></div>
+  <div class="container">
+    <FaqCategories></FaqCategories>
+  </div>
 </template>
 
 <script>
-export default {}
+import FaqCategories from './components/FaqCategories.vue'
+
+export default {
+  components: {
+    FaqCategories
+  }
+}
 </script>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
 body {
   background-color: #f5f6f8;
+  font-family: 'Lato';
 
   display: grid;
-  grid-template-columns: 305px;
-  grid-template-rows: 29.839rem;
 
   height: 100vh;
 
@@ -21,7 +30,7 @@ body {
 }
 
 .container {
-  width: 300px;
+  width: 305px;
   height: 460px;
 
   position: relative;
