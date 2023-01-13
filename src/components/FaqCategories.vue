@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="head">
-      <div class="head_img">
+      <div class="head__img">
         <img src="@/assets/images/astronaut.svg" />
       </div>
-      <div class="head_text">
+      <div class="head__text">
         <h2>Perguntas Frequentes</h2>
         <p>Escolha a categoria desejada</p>
       </div>
@@ -12,8 +12,9 @@
     <ul class="categories">
       <li
         v-for="category in $allCategories"
-        :key="category"
-        class="categories_item"
+        :key="category.id"
+        @click="showQuestions(category)"
+        class="categories__item"
       >
         <img :src="getIcon(category)" />
         <p>{{ category.title }}</p>
@@ -24,6 +25,7 @@
 
 <script>
 export default {
+  name: 'FaqCategories',
   created() {
     this.$store.dispatch('fetchFaqCategories')
   },
@@ -35,6 +37,11 @@ export default {
   methods: {
     getIcon(item) {
       return require(`@/assets/images/${item.icon}`)
+    },
+    showQuestions(category) {
+      this.$store.dispatch('changePage', 'Questions')
+      this.$store.dispatch('changeCategory', category)
+      this.$store.dispatch('changeTransition', 'left')
     }
   }
 }
@@ -44,7 +51,7 @@ export default {
 .head {
   color: #f5f6f8;
 
-  &_img {
+  &__img {
     display: grid;
     justify-content: center;
 
@@ -53,7 +60,7 @@ export default {
     }
   }
 
-  &_text {
+  &__text {
     margin-left: 25px;
 
     h2 {
@@ -71,12 +78,13 @@ export default {
 .categories {
   list-style: none;
 
-  padding: 10px 0 0 0;
+  padding: 0;
 
-  &_item {
+  &__item {
     color: #f5f6f8;
+    font-size: 18px;
 
-    padding: 0.25rem 1.875rem;
+    padding: 0 1.875rem;
 
     display: grid;
     grid-template-columns: auto 1fr;
