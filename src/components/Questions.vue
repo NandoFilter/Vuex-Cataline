@@ -18,9 +18,10 @@
     <div>
       <ul class="questions">
         <li
-          class="questions__item"
           v-for="question in $singleCategory.questions"
           :key="question.id"
+          @click="showAnswer(question)"
+          class="questions__item"
         >
           {{ question.title }}
         </li>
@@ -46,6 +47,11 @@ export default {
     returnPage() {
       this.$store.dispatch('changePage', 'FaqCategories')
       this.$store.dispatch('changeTransition', 'right')
+    },
+    showAnswer(question) {
+      this.$store.dispatch('changePage', 'Answer')
+      this.$store.dispatch('changeTransition', 'left')
+      this.$store.dispatch('changeQuestion', question)
     }
   }
 }

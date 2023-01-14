@@ -1,6 +1,7 @@
 {
-  "name": "desafio-vuex",
+  "name": "vuex-cataline",
   "version": "0.1.0",
+  "author": "Fernando Halmenschlager Filter",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",

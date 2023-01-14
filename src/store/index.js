@@ -6,6 +6,7 @@ export default createStore({
     actualPage: 'FaqCategories',
     faqCategories: [],
     singleCategory: [],
+    singleQuestion: [],
     transition: ''
   },
   mutations: {
@@ -17,6 +18,9 @@ export default createStore({
     },
     SET_SINGLE_CATEGORY(state, payload) {
       state.singleCategory = payload
+    },
+    SET_SINGLE_QUESTION(state, payload) {
+      state.singleQuestion = payload
     },
     SET_TRANSITION(state, payload) {
       state.transition = payload
@@ -33,6 +37,9 @@ export default createStore({
     changeCategory({ commit }, payload) {
       commit('SET_SINGLE_CATEGORY', payload)
     },
+    changeQuestion({ commit }, payload) {
+      commit('SET_SINGLE_QUESTION', payload)
+    },
     changeTransition({ commit }, payload) {
       commit('SET_TRANSITION', payload)
     }
@@ -46,6 +53,9 @@ export default createStore({
     },
     $singleCategory(state) {
       return state.singleCategory
+    },
+    $singleQuestion(state) {
+      return state.singleQuestion
     },
     $transition(state) {
       return state.transition

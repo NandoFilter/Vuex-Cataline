@@ -9,11 +9,13 @@
 <script>
 import FaqCategories from './components/FaqCategories.vue'
 import Questions from './components/Questions.vue'
+import Answer from './components/Answer.vue'
 
 export default {
   components: {
     FaqCategories,
-    Questions
+    Questions,
+    Answer
   },
   computed: {
     $actualPage() {
@@ -27,11 +29,19 @@ export default {
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@font-face {
+  font-family: lato-bold;
+  src: url(@/assets/fonts/Lato-Bold.ttf);
+}
+
+@font-face {
+  font-family: lato-regular;
+  src: url(@/assets/fonts/Lato-Regular.ttf);
+}
 
 body {
   background-color: #f5f6f8;
-  font-family: 'Lato';
+  font-family: lato-regular;
 
   display: grid;
 
