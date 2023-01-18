@@ -31,16 +31,16 @@ export default createStore({
       const data = faqCategories
       commit('SET_FAQ_CATEGORIES', data)
     },
-    changePage({ commit }, payload) {
+    setPage({ commit }, payload) {
       commit('SET_PAGE', payload)
     },
-    changeCategory({ commit }, payload) {
+    setCategory({ commit }, payload) {
       commit('SET_SINGLE_CATEGORY', payload)
     },
-    changeQuestion({ commit }, payload) {
+    setQuestion({ commit }, payload) {
       commit('SET_SINGLE_QUESTION', payload)
     },
-    changeTransition({ commit }, payload) {
+    setTransition({ commit }, payload) {
       commit('SET_TRANSITION', payload)
     }
   },

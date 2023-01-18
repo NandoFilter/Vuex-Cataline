@@ -23,8 +23,8 @@ export default {
       return require('@/assets/images/arrow-left.svg')
     },
     returnPage() {
-      this.$store.dispatch('changePage', 'Questions')
-      this.$store.dispatch('changeTransition', 'right')
+      this.$store.dispatch('setPage', 'Questions')
+      this.$store.dispatch('setTransition', 'right')
     }
   }
 }
@@ -40,17 +40,23 @@ export default {
 }
 
 .head {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  width: 305px;
 
-  margin-right: 50px;
+  display: grid;
+  grid-template-columns: 60px 220px;
+
+  align-items: center;
+  justify-content: center;
 
   color: #f5f6f8;
 
   &__arrow {
-    margin: 0 15px;
-    padding: 5.5px 6px 3px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0.4rem 1rem 1rem 0.4rem;
+    padding: 5.5px 6px 6px 6px;
     border-radius: 8px;
 
     transition: background-color 200ms ease-in-out;
@@ -62,6 +68,7 @@ export default {
   }
 
   &__title {
+    margin: 0 0 0.7rem 0;
     font-size: 19px;
   }
 }

@@ -1,8 +1,14 @@
 <template>
-  <div class="container">
-    <transition :name="$transition" mode="out-in">
-      <component :is="$actualPage"></component>
-    </transition>
+  <div>
+    <div class="container">
+      <transition :name="$transition" mode="out-in">
+        <component :is="$actualPage"></component>
+      </transition>
+    </div>
+    <p class="made_by">
+      Made by&nbsp;
+      <a href="https://github.com/NandoFilter" target="_blank">NandoFilter</a>
+    </p>
   </div>
 </template>
 
@@ -51,6 +57,10 @@ body {
   align-content: center;
 }
 
+img {
+  pointer-events: none;
+}
+
 .container {
   width: 305px;
   height: 460px;
@@ -90,5 +100,20 @@ body {
 .left-leave-to,
 .right-leave-to {
   opacity: 0;
+}
+
+.made_by {
+  display: flex;
+  justify-content: center;
+
+  font-family: lato-bold;
+  color: #3f4452;
+
+  a {
+    text-decoration: none;
+    color: #2d9fa5;
+
+    cursor: pointer;
+  }
 }
 </style>

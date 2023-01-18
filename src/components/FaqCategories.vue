@@ -39,9 +39,9 @@ export default {
       return require(`@/assets/images/${item.icon}`)
     },
     showQuestions(category) {
-      this.$store.dispatch('changePage', 'Questions')
-      this.$store.dispatch('changeCategory', category)
-      this.$store.dispatch('changeTransition', 'left')
+      this.$store.dispatch('setPage', 'Questions')
+      this.$store.dispatch('setCategory', category)
+      this.$store.dispatch('setTransition', 'left')
     }
   }
 }

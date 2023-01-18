@@ -45,13 +45,13 @@ export default {
       return require(`@/assets/images/${img}`)
     },
     returnPage() {
-      this.$store.dispatch('changePage', 'FaqCategories')
-      this.$store.dispatch('changeTransition', 'right')
+      this.$store.dispatch('setPage', 'FaqCategories')
+      this.$store.dispatch('setTransition', 'right')
     },
     showAnswer(question) {
-      this.$store.dispatch('changePage', 'Answer')
-      this.$store.dispatch('changeTransition', 'left')
-      this.$store.dispatch('changeQuestion', question)
+      this.$store.dispatch('setPage', 'Answer')
+      this.$store.dispatch('setTransition', 'left')
+      this.$store.dispatch('setQuestion', question)
     }
   }
 }
@@ -65,17 +65,23 @@ export default {
 }
 
 .head {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  width: 305px;
 
-  margin-right: 15px;
+  display: grid;
+  grid-template-columns: 55px 210px;
+
+  align-items: center;
+  justify-content: center;
 
   color: #f5f6f8;
 
   &__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     margin: 0 1.2rem 1.5rem 0;
-    padding: 5.5px 6px 3px 6px;
+    padding: 5.5px 6px 6px 6px;
     border-radius: 8px;
 
     transition: background-color 200ms ease-in-out;
